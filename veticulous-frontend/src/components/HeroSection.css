@@ -1,0 +1,38 @@
+.hero-section {
+    height: 100vh;
+    background: url("https://source.unsplash.com/1600x900/?animals,veterinary") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #00008B;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-section a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff; /* CTA Button */
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .hero-section a:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add spacing for the search bar */
+.hero-section .search-bar {
+    margin: 20px 0;
+  }  

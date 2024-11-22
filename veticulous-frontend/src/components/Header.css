@@ -1,0 +1,80 @@
+/* Header Container */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #003366, #00509e); /* Blue gradient */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+  
+  /* Flexbox alignment for content */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Logo and title */
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f0f8ff; /* Light blue */
+  }
+  
+  /* Navigation Menu */
+  .header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .header-nav ul li a:hover {
+    color: #ffcc00; /* Highlight color */
+  }
+  
+  /* CTA Button */
+  .header-cta {
+    margin-left: 20px;
+  }
+  
+  .cta-button {
+    text-decoration: none;
+    background-color: #ffcc00; /* Bright yellow button */
+    color: #003366;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .cta-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+  }
+  

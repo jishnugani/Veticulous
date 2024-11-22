@@ -1,28 +1,114 @@
+/* Icon Bar Container */
 .icon-bar {
-    position: fixed;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  position: fixed;
+  top: 55%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: width 0.4s ease, padding 0.4s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
 }
-  
+
+/* Expanded and Collapsed States */
+.icon-bar.expanded {
+  width: 100px; /* Wider for better spacing */
+  padding: 10px 5px;
+}
+
+.icon-bar.collapsed {
+  width: 50px; /* Collapsed state width */
+  padding: 10px 0;
+}
+
+/* Toggle Button */
+.toggle-button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #003d80;
+  transform: scale(1.1);
+}
+
+/* Icons Container */
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 1; /* Icons visible by default */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.icon-bar.collapsed .icons {
+  opacity: 0; /* Hide icons when collapsed */
+  pointer-events: none; /* Prevent interaction with hidden icons */
+  transform: translateX(-20px);
+}
+
+/* Icon Links */
 .icon-link {
-    width: 40px;
-    height: 40px;
-    background-color: #e0f7ff; /* Light blue */
-    border: 2px solid #0073e6; /* Medium blue */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0073e6; /* Medium blue */
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  color: white;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #0056b3;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Remove underline */
+  overflow: hidden;
 }
-  
+
 .icon-link:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}  
+  background-color: #003d80;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fancy Tooltip for Icons */
+.icon-link::after {
+  content: attr(title);
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icon-link:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
+}

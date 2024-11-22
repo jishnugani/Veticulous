@@ -1,13 +1,9 @@
+/* General App Styling */
 .app-container {
   display: flex;
-  height: 100vh;
+  flex-direction: column;
   background-color: #f0f8ff; /* Light blue background */
   color: #003366; /* Dark blue text */
-  font-family: Arial, sans-serif;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
+  font-family: "Arial", sans-serif;
+  min-height: 100vh;
 }
