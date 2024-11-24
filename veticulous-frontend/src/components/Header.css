@@ -28,6 +28,7 @@
   width: 40px; /* Logo size */
   height: 40px;
   object-fit: contain;
+  margin-right: 10px; /* Adjust the value for desired spacing */
 }
 
 .logo h1 {
@@ -139,4 +140,16 @@ body {
   margin: 0;
   padding-top: 70px; /* Matches header height */
   box-sizing: border-box;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Keeps text color consistent */
+}
+
+.logo-link:hover {
+  opacity: 0.8; /* Optional hover effect */
+  transition: opacity 0.2s ease-in-out;
 }
