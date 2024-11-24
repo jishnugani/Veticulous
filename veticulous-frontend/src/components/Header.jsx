@@ -1,26 +1,65 @@
-import React from "react";
-import "./Header.css";
-import logo from "../assets/VeticulousCat.png"; // Make sure the logo is saved in the correct folder
+import React, { useState } from 'react';
+import './Header.css';
+import logo from "../assets/VeticulousCat.png";
 
 const Header = () => {
+  const [aboutDropdownVisible, setAboutDropdownVisible] = useState(false);
+  const [blogDropdownVisible, setBlogDropdownVisible] = useState(false);
+
+  const toggleAboutDropdown = () => setAboutDropdownVisible(!aboutDropdownVisible);
+  const toggleBlogDropdown = () => setBlogDropdownVisible(!blogDropdownVisible);
+
   return (
     <header className="header">
-      <div className="header-container">
-        <div className="header-logo">
-          <img src={logo} alt="Organization Logo" className="logo-image" />
-          <h1 className="header-title">Veticulous</h1>
+      {/* Logo Section */}
+      <div className="logo">
+        <img src={logo} alt="Veticulous Logo" className="logo-image" />
+        <h1>Veticulous</h1>
+      </div>
+
+      {/* Navigation */}
+      <nav className="nav">
+        <a href="#hero">Home</a>
+
+        {/* About Us Dropdown */}
+        <div
+          className="dropdown"
+          onMouseEnter={toggleAboutDropdown}
+          onMouseLeave={toggleAboutDropdown}
+        >
+          <span className="dropdown-button">About Us</span>
+          {aboutDropdownVisible && (
+            <div className="dropdown-menu">
+              <a href="#about">Our Story</a>
+              <a href="#team">Team</a>
+              <a href="#vision">Vision</a>
+            </div>
+          )}
         </div>
-        <nav className="header-nav">
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#blogs">Blogs</a></li>
-            <li><a href="#vision">Our Vision</a></li>
-            <li><a href="#team">Team</a></li>
-          </ul>
-        </nav>
-        <div className="header-cta">
-          <a href="#contact" className="cta-button">Join Us</a>
+
+        {/* Blog Dropdown */}
+        <div
+          className="dropdown"
+          onMouseEnter={toggleBlogDropdown}
+          onMouseLeave={toggleBlogDropdown}
+        >
+          <span className="dropdown-button">Blog</span>
+          {blogDropdownVisible && (
+            <div className="dropdown-menu">
+              <a href="#blog">Our Blog</a>
+              <a href="#articles">Latest Articles</a>
+              <a href="#resources">Resources</a>
+            </div>
+          )}
         </div>
+
+        <a href="#contact">Contact</a>
+      </nav>
+
+      {/* Action Buttons */}
+      <div className="actions">
+        <button className="donate-button">Donate</button>
+        <button className="join-button">Join Us</button>
       </div>
     </header>
   );

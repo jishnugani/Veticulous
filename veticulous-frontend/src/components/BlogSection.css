@@ -1,26 +1,94 @@
+/* Blog Section Base Styles */
 .blog-section {
-    padding: 4rem 2rem;
-    background: #d9eaff;
-    text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  background-color: #eef4fa; /* Light blue background for contrast */
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 50px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade-in and fade-out effects */
+.blog-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog-section.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Section Heading */
+.blog-section h2 {
+  font-size: 2rem;
+  color: #013a63; /* Navy blue for heading */
+  margin-bottom: 15px;
+}
+
+/* Section Text */
+.blog-section p {
+  font-size: 1.1rem;
+  color: #2a4d69; /* Darker text for readability */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Blog Card Styles */
+.blog-card {
+  display: inline-block;
+  background-color: #ffffff; /* White cards */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 10px;
+  width: calc(100% - 40px); /* Adjust width for responsiveness */
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Blog Card Content */
+.blog-card h3 {
+  font-size: 1.25rem;
+  color: #013a63;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .blog-section {
+    padding: 30px 15px;
   }
-  
+
+  .blog-card {
+    width: calc(100% - 20px); /* Full-width for smaller screens */
+    margin: 20px auto;
+  }
+
   .blog-section h2 {
-    font-size: 2.5rem;
-    color: #003366;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
   }
-  
-  .blog-section button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+
+  .blog-section p {
     font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
   }
-  
-  .blog-section button:hover {
-    background-color: #0056b3;
-  }  
+}

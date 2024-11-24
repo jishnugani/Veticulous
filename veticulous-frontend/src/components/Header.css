@@ -1,80 +1,142 @@
-/* Header Container */
+/* Header Styles */
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: linear-gradient(90deg, #003366, #00509e); /* Blue gradient */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 70px; /* Adjusted height for more space */
+  background-color: #013a63;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Horizontal spacing */
+  z-index: 1000; /* Keeps it above all other elements */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  width: 40px; /* Logo size */
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #eaf6fc;
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a, .dropdown-button {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover, .dropdown-button:hover {
+  background-color: #005f99;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 23px; /* Adjusted value to bring menu closer to header */
+  left: 0;
+  background-color: #005f99;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInDropdown 0.3s ease forwards;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #013a63;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.donate-button, .join-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donate-button {
+  background-color: #ff6b6b; /* Red for Donate */
+}
+
+.donate-button:hover {
+  background-color: #e63946;
+}
+
+.join-button {
+  background-color: #48cae4; /* Blue for Join Us */
+}
+
+.join-button:hover {
+  background-color: #0077b6;
+}
+
+/* Dropdown Animation */
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  /* Flexbox alignment for content */
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Logo and title */
-  .header-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-image {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .header-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #f0f8ff; /* Light blue */
-  }
-  
-  /* Navigation Menu */
-  .header-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .header-nav ul li a:hover {
-    color: #ffcc00; /* Highlight color */
-  }
-  
-  /* CTA Button */
-  .header-cta {
-    margin-left: 20px;
-  }
-  
-  .cta-button {
-    text-decoration: none;
-    background-color: #ffcc00; /* Bright yellow button */
-    color: #003366;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s;
-  }
-  
-  .cta-button:hover {
-    background-color: #e6b800;
-    transform: scale(1.05);
-  }
-  
+}
+
+/* Padding for content to avoid overlap */
+body {
+  margin: 0;
+  padding-top: 70px; /* Matches header height */
+  box-sizing: border-box;
+}

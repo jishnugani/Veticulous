@@ -1,13 +1,41 @@
-import React from "react";
-import "./AboutSection.css";
+import React, { useEffect, useRef, useState } from 'react';
+import './AboutSection.css';
 
 const AboutSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="about-section" id="about">
+    <section
+      ref={sectionRef}
+      className={`about-section ${isVisible ? 'fade-in' : 'fade-out'}`}
+    >
+      {/* Add an icon or illustration for visual impact */}
+      <div className="icon">🐾</div>
+
       <h2>About Us</h2>
       <p>
-        Our organization is dedicated to advancing veterinary medicine and promoting animal
-        welfare. Meet our passionate team and learn more about our vision.
+        We are dedicated to promoting animal welfare and spreading awareness
+        through veterinary medicine and science.
       </p>
     </section>
   );

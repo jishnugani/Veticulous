@@ -1,18 +1,68 @@
+/* About Section Base Styles */
 .about-section {
-    padding: 4rem 2rem;
-    background: #e6f7ff;
-    text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 50px 30px; /* Adjusted padding for spacing */
+  text-align: center;
+  border-radius: 15px; /* Softer rounded corners */
+  margin: 50px auto; /* Centers section and adds spacing */
+  max-width: 800px; /* Restricts section width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade-in and fade-out effects */
+.about-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-section.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Section Heading */
+.about-section h2 {
+  font-size: 2rem;
+  color: #013a63; /* Navy blue */
+  margin-bottom: 15px;
+}
+
+/* Section Text */
+.about-section p {
+  font-size: 1.1rem;
+  color: #2a4d69; /* Darker text color */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Decorative Icon or Illustration */
+.about-section .icon {
+  font-size: 3rem;
+  color: #48cae4; /* Bright blue */
+  margin-bottom: 20px;
+}
+
+/* Add subtle hover effect */
+.about-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Elevate section on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .about-section {
+    padding: 30px 15px;
   }
-  
+
   .about-section h2 {
-    font-size: 2.5rem;
-    color: #003366;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
   }
-  
+
   .about-section p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1rem;
   }
-  
+}
