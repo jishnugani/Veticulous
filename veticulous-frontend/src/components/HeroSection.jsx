@@ -30,8 +30,10 @@ const HeroSection = () => {
       className={`hero-section ${isVisible ? 'fade-in' : 'fade-out'}`}
     >
       <div className="hero-content">
-        <h1>Welcome to Vet Organization</h1>
-        <p>
+        <h1 className={isVisible ? 'animate-header' : ''}>
+          Welcome to Vet Organization
+        </h1>
+        <p className={isVisible ? 'animate-text' : ''}>
           Promoting animal welfare and awareness through veterinary medicine and science.
         </p>
         <div className="search-container">
@@ -44,6 +46,9 @@ const HeroSection = () => {
         <img src="https://via.placeholder.com/150" alt="Placeholder 2" />
         <img src="https://via.placeholder.com/150" alt="Placeholder 3" />
       </div>
+
+      {/* Floating particle background */}
+      <div className="particles"></div>
     </section>
   );
 };
