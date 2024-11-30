@@ -2,15 +2,15 @@
 .header {
   position: fixed; /* Fixed at the top */
   top: 0;
-  left: 10%;
-  right: 10%;
-  height: 70px; /* Adjusted height for more space */
+  left: 0; /* Span the entire width */
+  right: 0;
+  height: 70px; /* Adjusted height */
   background-color: #013a63;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Horizontal spacing */
+  padding: 0 10%; /* Add horizontal padding for content */
   z-index: 1000; /* Keeps it above all other elements */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 25px;
@@ -25,10 +25,10 @@
 }
 
 .logo-image {
-  width: 40px; /* Logo size */
+  width: 40px;
   height: 40px;
   object-fit: contain;
-  margin-right: 10px; /* Adjust the value for desired spacing */
+  margin-right: 10px;
 }
 
 .logo h1 {
@@ -65,7 +65,7 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 23px; /* Adjusted value to bring menu closer to header */
+  top: 100%; /* Adjusted to position below the header */
   left: 0;
   background-color: #005f99;
   border-radius: 5px;
@@ -145,11 +145,11 @@ body {
 .logo-link {
   display: flex;
   align-items: center;
-  text-decoration: none; /* Removes underline */
-  color: inherit; /* Keeps text color consistent */
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo-link:hover {
-  opacity: 0.8; /* Optional hover effect */
+  opacity: 0.8;
   transition: opacity 0.2s ease-in-out;
 }

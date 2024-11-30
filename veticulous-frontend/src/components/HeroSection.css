@@ -220,7 +220,7 @@
   z-index: -1;
   background-image: radial-gradient(circle, rgb(37, 97, 113) 1px, transparent 1px);
   background-size: 30px 30px;
-  animation: particleAnimation 180s linear infinite;
+  animation: particleAnimation 210s linear infinite;
 }
 
 @keyframes particleAnimation {

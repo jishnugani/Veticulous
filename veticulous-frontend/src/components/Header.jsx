@@ -13,9 +13,9 @@ const Header = () => {
     <header className="header">
       {/* Logo Section */}
       <div className="logo">
-      <a href="#hero" className="logo-link">
+        <a href="#hero" className="logo-link">
           <img src={logo} alt="Veticulous Logo" className="logo-image" />
-          <h1>  Veticulous</h1>
+          <h1>Veticulous</h1>
         </a>
       </div>
 
