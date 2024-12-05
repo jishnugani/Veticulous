@@ -75,6 +75,9 @@
   opacity: 0;
   transform: translateY(-50px);
   transition: opacity 1s ease, transform 1s ease;
+  line-height: 1.6; /* Maintain spacing between lines */
+  word-wrap: break-word; /* Ensure text wraps naturally */
+  white-space: normal; /* Allow text wrapping */
 }
 
 .hero-section h1.animate-header, .hero-section p.animate-text {
@@ -244,9 +247,21 @@
 
   .hero-section p {
     font-size: 1.2rem;
+    max-width: 90%; /* Further restrict width for smaller screens */
+    margin: 0 auto; /* Center-align the text */
+    line-height: 1.4;
   }
 
   .hero-images {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-section p {
+    font-size: 1.4rem;
+    max-width: 80%; /* Force wrapping by restricting width */
+    margin: 0 auto; /* Center-align the text */
+    line-height: 1.5;
   }
 }

@@ -31,7 +31,7 @@ const HeroSection = () => {
     >
       <div className="hero-content">
         <h1 className={isVisible ? 'animate-header' : ''}>
-          Welcome to Vet Organization
+          Welcome to Veticulous
         </h1>
         <p className={isVisible ? 'animate-text' : ''}>
           Promoting animal welfare and awareness through veterinary medicine and science.

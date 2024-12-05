@@ -13,7 +13,7 @@ const Header = () => {
     <header className="header">
       {/* Logo Section */}
       <div className="logo">
-        <a href="#hero" className="logo-link">
+        <a href="/" className="logo-link">
           <img src={logo} alt="Veticulous Logo" className="logo-image" />
           <h1>Veticulous</h1>
         </a>
@@ -21,7 +21,7 @@ const Header = () => {
 
       {/* Navigation */}
       <nav className="nav">
-        <a href="#hero">Home</a>
+        <a href="/">Home</a>
 
         {/* About Us Dropdown */}
         <div
@@ -32,9 +32,9 @@ const Header = () => {
           <span className="dropdown-button">About Us</span>
           {aboutDropdownVisible && (
             <div className="dropdown-menu">
-              <a href="#about">Our Story</a>
-              <a href="#team">Team</a>
-              <a href="#vision">Vision</a>
+              <a href="/about">Our Story</a>
+              <a href="/team">Team</a>
+              <a href="/vision">Vision</a>
             </div>
           )}
         </div>
@@ -48,14 +48,14 @@ const Header = () => {
           <span className="dropdown-button">Blog</span>
           {blogDropdownVisible && (
             <div className="dropdown-menu">
-              <a href="#blog">Our Blog</a>
-              <a href="#articles">Latest Articles</a>
-              <a href="#resources">Resources</a>
+              <a href="/blog">Our Blog</a>
+              <a href="/articles">Latest Articles</a>
+              <a href="/resources">Resources</a>
             </div>
           )}
         </div>
 
-        <a href="#contact">Contact</a>
+        <a href="/contact">Contact</a>
       </nav>
 
       {/* Action Buttons */}
